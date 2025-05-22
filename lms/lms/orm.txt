@@ -1,0 +1,20 @@
+CRUD With ORM
+
+---Insert a Record
+
+Courses.objects.create()
+
+orm query for fetch all records
+
+orm query for fetch record with id -- 5
+
+orm query for fetch all beginner level Courses
+
+orm query for fetch  all courses with price 35000
+
+
+orm query to fetch all records except beginner level
+
+courses---search query
+
+filter beginner level courses and intermediate courses 
