@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block section %}
+
+<div class="container my-5">
+  <div class="card border-primary">
+    <div class="card-header bg-primary text-white text-center fw-bold fs-4">
+      Student Register
+    </div>
+    <div class="card-body">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="courseTitle" class="form-label">First Name</label>
+                <!-- <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title" name="title" required> -->
+                {{form.title}}
+                {% if form.title.errors %}
+                 <p class="text-danger">{{form.title.errors|join:" "}}</p>
+                 {% endif %}
+            </div>
+            <div class="col-md-6">
+
+                <label for="courseImage" class="form-label">Last Name</label>
+                <!-- <input class="form-control" type="file" id="courseImage" name="image"> -->
+                 {{form.image}}
+                 {% if form.image.errors %}
+                 <p class="text-danger">{{form.image.errors|join:" "}}</p>
+                 {% endif %}
+
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="courseDescription" class="form-label">Image</label>
+                    <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
+                {{form.description}}
+                {% if form.description.errors %}
+                <p class="text-danger">{{form.description.errors|join:" "}}</p>
+                {% endif %}
+        </div>        
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                    <label for="courseDescription" class="form-label">Password</label>
+                    <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
+                     {{form.description}}
+                    {% if form.description.errors %}
+                    <p class="text-danger">{{form.description.errors|join:" "}}</p>
+                    {% endif %}
+            </div>
+
+            <div class="col-md-6">
+                    <label for="courseDescription" class="form-label">Confirm Password</label>
+                    <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
+                    {{form.description}}
+                    {% if form.description.errors %}
+                     <p class="text-danger">{{form.description.errors|join:" "}}</p>
+                     {% endif %} 
+
+            </div>
+
+        </div>
+        
+
+        <div class="mb-3">
+          <label for="courseCategory" class="form-label">Qualification</label>
+          <!-- <select class="form-select" id="courseCategory" name="category">
+            <option selected disabled>Select category</option>
+
+            {% for category in categories%}
+            <option value="{{category.value}}">{{category.label}}</option>
+            {% endfor %}
+            
+          </select> -->
+          {{form.category}}
+          {% if form.category.errors %}
+          <p class="text-danger">{{form.category.errors|join:" "}}</p>
+          {% endif %}
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Student Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

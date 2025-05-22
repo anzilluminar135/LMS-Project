@@ -15,7 +15,7 @@ class RoleChoices(models.TextChoices):
 
 class Profile(AbstractUser):
 
-    image = models.ImageField(upload_to='profile-images/')
+    # image = models.ImageField(upload_to='profile-images/')
 
     role = models.CharField(max_length=15,choices=RoleChoices.choices)
 
