@@ -8,5 +8,7 @@ urlpatterns = [
 
     path('logout/',views.LogoutView.as_view(),name='logout'),
 
+    path('register-choices/',views.RegisterChoicesView.as_view(),name='register-choices'),
+
 
 ]

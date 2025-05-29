@@ -5,7 +5,7 @@
 <div class="container my-5">
   <div class="card border-primary">
     <div class="card-header bg-primary text-white text-center fw-bold fs-4">
-      Student Register
+      Instructor Register
     </div>
     <div class="card-body">
       <form method="post" enctype="multipart/form-data">
@@ -43,9 +43,9 @@
         <div class="mb-3">
             <label for="courseDescription" class="form-label">Image</label>
                     <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
-                {{student_form.image}}
-                {% if student_form.image.errors %}
-                <p class="text-danger">{{student_form.image.errors|join:" "}}</p>
+                {{instructor_form.image}}
+                {% if instructor_form.image.errors %}
+                <p class="text-danger">{{instructor_form.image.errors|join:" "}}</p>
                 {% endif %}
         </div>        
 
@@ -73,7 +73,16 @@
         
 
         <div class="mb-3">
-          <label for="courseCategory" class="form-label">Qualification</label>
+          <label for="courseCategory" class="form-label">Description</label>
+         
+          {{instructor_form.description}}
+          {% if instructor_form.description.errors %}
+          <p class="text-danger">{{instructor_form.description.errors|join:" "}}</p>
+          {% endif %}
+        </div>
+
+        <div class="mb-3">
+          <label for="courseCategory" class="form-label">Area of Expertise</label>
           <!-- <select class="form-select" id="courseCategory" name="category">
             <option selected disabled>Select category</option>
 
@@ -82,14 +91,14 @@
             {% endfor %}
             
           </select> -->
-          {{student_form.qualification}}
-          {% if student_form.qualification.errors %}
-          <p class="text-danger">{{student_form.qualification.errors|join:" "}}</p>
+          {{instructor_form.area_of_expertise}}
+          {% if instructor_form.area_of_expertise.errors %}
+          <p class="text-danger">{{instructor_form.area_of_expertise.errors|join:" "}}</p>
           {% endif %}
         </div>
 
         <div class="text-center">
-          <button type="submit" class="btn btn-primary">Student Register</button>
+          <button type="submit" class="btn btn-primary">Instructor Register</button>
         </div>
       </form>
     </div>

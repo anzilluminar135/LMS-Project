@@ -5,3 +5,5 @@ from django.contrib import admin
 from . import models
 
 admin.site.register(models.Instructors)
+
+admin.site.register(models.AreaOfExpertise)

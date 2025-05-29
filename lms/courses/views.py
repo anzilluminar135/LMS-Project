@@ -48,6 +48,17 @@ class CoursesListView(View):
 
         return render(request,'courses/courses-list.html',context=data)
 
+class CoursesDetailView(View):
+
+    def get(self,request,*args,**kwargs):
+
+        uuid = kwargs.get('uuid')
+
+        course = Courses.objects.get(uuid=uuid)
+
+        data = {'course':course}
+
+        return render(request,'courses/course-details.html',context=data)
 
 class HomeView(View):
 
@@ -67,7 +78,7 @@ class InstructorCoursesListView(View):
 
     def get(self,request,*args,**kwargs):
 
-        instructor = Instructors.objects.get(id=1)
+        instructor = Instructors.objects.get(profile=request.user)
 
         courses = Courses.objects.filter(instructor=instructor)
 
