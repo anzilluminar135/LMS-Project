@@ -16,6 +16,8 @@ from django.utils.decorators import method_decorator
 
 from authentication.permissions import permission_roles
 
+from lms.utility import get_recommended_courses
+
 
 # Create your views here.
 
@@ -56,7 +58,10 @@ class CoursesDetailView(View):
 
         course = Courses.objects.get(uuid=uuid)
 
-        data = {'course':course}
+        recommended_courses = get_recommended_courses(course)
+
+        data = {'course':course,'recommended_courses':recommended_courses}
+
 
         return render(request,'courses/course-details.html',context=data)
 

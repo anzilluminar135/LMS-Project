@@ -84,6 +84,8 @@ class Courses(BaseClass):
 
     type = models.CharField(max_length=15,choices=TypeChoices.choices)
 
+    tags = models.TextField()
+
     fee = models.DecimalField(max_digits=8,decimal_places=2)
 
     offer_fee = models.DecimalField(max_digits=8,decimal_places=2,null=True,blank=True)

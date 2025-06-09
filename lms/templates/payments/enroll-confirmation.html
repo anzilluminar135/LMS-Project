@@ -7,31 +7,25 @@
       <div class="col-md-8">
         <div class="card shadow">
           <div class="card-header bg-primary text-white text-center">
-            <h3 class="mb-0">Order Confirmation</h3>
+            <h3 class="mb-0">Enroll Confirmation</h3>
           </div>
           <div class="card-body">
-            <p class="text-success text-center fw-semibold">Your order has been successfully placed!</p>
-            
             <hr>
             
             <h5 class="mb-3">Course Details</h5>
             <ul class="list-group list-group-flush">
               <li class="list-group-item d-flex justify-content-between">
                 <strong>Course Name:</strong>
-                <span>Full Stack Web Development</span>
+                <span>{{payment.course.title}}</span>
               </li>
               <li class="list-group-item d-flex justify-content-between">
                 <strong>Payment Fee:</strong>
-                <span>$299</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                <strong>Order ID:</strong>
-                <span>#ORD12345678</span>
+                <span><i class="fa-solid fa-indian-rupee-sign me-2"></i>{{payment.amount}}</span>
               </li>
             </ul>
 
             <div class="mt-4 text-center">
-              <button class="btn btn-success btn-lg">Pay Now</button>
+              <button class="btn btn-success btn-lg"><a href="{% url 'razorpay-view' payment.course.uuid %}">Pay Now</a></button>
             </div>
           </div>
           <div class="card-footer text-muted text-center">
