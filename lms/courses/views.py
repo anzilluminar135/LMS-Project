@@ -87,6 +87,8 @@ class InstructorCoursesListView(View):
 
         courses = Courses.objects.filter(instructor=instructor)
 
+        # instructor.courses_set.filter()
+
         data = {'page':'instructor-courses-page','courses':courses}
 
         return render(request,'courses/instructor-courses-list.html',context=data)

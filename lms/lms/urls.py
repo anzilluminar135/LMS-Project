@@ -21,7 +21,10 @@ from django.conf.urls.static import static
 
 from django.conf import settings
 
+from courses import views
+
 urlpatterns = [
+    path('',views.CoursesListView.as_view(),name='courses-list'),
     path('admin/', admin.site.urls),
     path('courses/',include('courses.urls')),
     path('authentication/',include('authentication.urls')),
